@@ -21,7 +21,7 @@ Build for larger , more complex appli.
 Redux helps you manage the global state of your application in one central place, so multiple components can share and update data easily and predictably.
 
 (State Man.) -
-Process of handling and orgnizing the data that chnages over time .
+Process of handling and orgnizing the data that changes over time .
 
 # STORE
 A centralized store holds the whole state tree of your appli. 
@@ -29,11 +29,11 @@ A centralized store holds the whole state tree of your appli.
 # REDUCER 
 Functions that take the curr. state and an actiion as arg. and return  new state result . (event handler).
 (state, action) => newState
-Updates state based on action
+Reducers are pure functions that specify how the application’s state changes in response to actions. Redux Toolkit simplifies reducer creation with the createSlice function.
 
 # Action 
 It is a plain javascript object that has a type field (lile event).
-Describes what happened
+Describes what happened .  
 
 # SLICE 
 Collection of redux reducer logic and actions for single together in a single file .
@@ -45,14 +45,18 @@ The <Provider> component makes the redux store available to any nested component
 # useDispatch 
 Send actions to the store .
 
+# Dispatch 
+ Dispatching actions is a fundamental concept that allows you to update the state of your application. Actions are dispatched to trigger changes in the Redux store, which are then handled by reducers to update the state accordingly.
+
 # useSelector 
 Reads data from the store.
 The useSelector hook allows you to extract data or the state from the redux store using the selector function .
 
-
+# What is useSelector used for?
+UseSelector() is a custom hook included in the React Redux library, and it is used to extract data from the Redux store state for use in a React component.
 
 # Why does it exists ? 
-All app state lives in a single store.
+All app. state lives in a single store.
 Any component can access or update it directly using useSelector and useDispatch.
 
 # How does it works ? 

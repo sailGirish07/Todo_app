@@ -1,10 +1,17 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../features/todo/todoSlice";
+import{useEffect, useRef} from 'react'
 
 export default function AddForm(){
     const[task, setTask] = useState("");
     const dispatch = useDispatch();
+    const addtaskRef = useRef();
+
+    useEffect(() => {
+        addtaskRef.current.focus();
+    }, []);
+
 
     const submitHandler  = (evt) => {
         evt.preventDefault();
@@ -16,7 +23,7 @@ export default function AddForm(){
     return(
     <>
     <form onSubmit={submitHandler}>
-        <input type="text" onChange={(e) => setTask(e.target.value)}></input>
+        <input type="text" name="addtask" onChange={(e) => setTask(e.target.value)} ref={addtaskRef} value={task}></input>&nbsp; &nbsp;
         <button>Add Task</button>
     </form>
     </>

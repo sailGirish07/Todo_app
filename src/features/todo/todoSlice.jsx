@@ -23,12 +23,13 @@ export const todoSlice = createSlice({
         markAsDone : (state, action) => {
             state.todos = state.todos.map((todo) => {
                 if(todo.id === action.payload){
-                    todo.isDone = true;
+                    return{...todo, isDone : true};
                 }
+                return todo;
             })
         }
     }
 })
 
-export const {addTodo, deleteTodo, markAsDone} = todoSlice.actions;
+export const {addTodo, deleteTodo, markAsDone, editTodo} = todoSlice.actions;
 export default todoSlice.reducer;
